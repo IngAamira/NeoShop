@@ -1,6 +1,4 @@
-# E-Shop Project Documentation
-
-## Description
+# NeoShop
 This is an e-commerce application developed in Java with the Spring Boot framework with Spring WebFlux. The application allows users to browse and purchase products online, organized into categories.
 
 ## Project Structure
@@ -9,7 +7,7 @@ The project follows a hexagonal architecture for a clear separation of applicati
 ## Folder Structure
 
 ```bash
-/eshop
+/NeoShop
 ├── src
 │   ├── main
 │   │   ├── java
@@ -38,7 +36,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
 ## Key Components
 
 ### Classes and Packages
-
 - `com.ingaamira.application.exceptions`: Contains custom exception classes like `InvalidProductDataException` y `ProductNotFoundException`.
 - `com.ingaamira.application.repository`: Contains interfaces to access product and category data.
 - `com.ingaamira.application.services`: Contains application services to handle business logic.
@@ -49,17 +46,14 @@ The project follows a hexagonal architecture for a clear separation of applicati
 - `com.ingaamira.presentation.controller`: Contains controllers that handle HTTP requests and manage the API.
 
 ### Exception Handling
-
 - `com.ingaamira.application.exceptions.InvalidProductDataException`: Exception thrown when invalid product data is encountered while creating or updating a product.
 - `com.ingaamira.application.exceptions.ProductNotFoundException`: Exception thrown when a product with the specified ID is not found.
 
 ### Pagination and Filtering Implementation
-
 - Pagination and filtering implementation in list endpoints is done using Spring Data R2DBC.
 - The getAllProducts method accepts pagination (page and size), sorting (sortBy), and filtering (filterBy) parameters. These parameters are used to perform paginated and filtered search for products based on client needs.
 
 ### Technology Stack
-
 - Spring Boot: Framework for building Java applications.
 - Spring Data R2DBC: For accessing reactive databases.
 - MapStruct: For efficient conversion between entities and domain objects.
@@ -70,7 +64,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
 ## Endpoint Documentation:
 
 ### Get all products (getAllProducts)
-
 - **Description:** This endpoint allows you to get a paginated list of all available products.
 - **HTTP Method:** GET
 - **Path:** `/api/products/all`
@@ -82,7 +75,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Get a product by ID (getProductById)
-
 - **Description:** This endpoint allows you to get a product by its ID.
 - **HTTP Method:** GET
 - **Path:** `api/products/{productId}`
@@ -100,7 +92,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Create a new product (createProduct)
-
 - **Description:** This endpoint allows you to create a new product.
 - **HTTP Method:** POST
 - **Path:** `api/products`
@@ -124,7 +115,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Update an existing product by ID (updateProduct)
-
 - **Description:** This endpoint allows you to update an existing product by its ID.
 - **HTTP Method:** PUT
 - **Path:** `api/products/{productId}`
@@ -154,7 +144,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Delete a product by ID (deleteProduct)
-
 - **Description:** This endpoint allows you to delete a product by its ID.
 - **HTTP Method:** DELETE
 - **Path:** `api/products/{productId}`
@@ -169,7 +158,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Get products by category (getProductsByCategoryId)
-
 - **Description:** This endpoint allows you to get a list of products by their category.
 - **HTTP Method:** GET
 - **Path:** `/byCategory/{categoryId}`
@@ -184,7 +172,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     ```
 
 ### Handle Validation Exceptions (handleValidationExceptions)
-
 - **Description:** This is a controller to handle validation exceptions thrown by Spring during input validation.
 - **HTTP Method:** Not Applicable.
 - **Not Found Response (404 Not Found):**
@@ -192,7 +179,6 @@ The project follows a hexagonal architecture for a clear separation of applicati
     - Description: A map containing validation error fields and their respective error messages.
 
 ## Application Configuration
-
 - Application configuration is found in `application.properties`.
 - Database and other configurations can be adjusted as per environment needs.
 
@@ -258,13 +244,11 @@ INSERT INTO products (name, price, brand, gender, active, category_id) VALUES
 ```
 
 ## Installation and Usage
-
 1. Clone the repository.
 2. Import the project into your favorite IDE.
 3. Adjust database configuration and other properties in `application.properties`.
 4. Run the application from your IDE or using `mvn spring-boot:run`.
 
 ## Contributors
-
 - Manuel Cuevas: Technical Leader
 - Andrés Alfonso Mira Mejía (@IngAamira): Software Developer
